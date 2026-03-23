@@ -1,0 +1,67 @@
+:root {
+    --bg-color: #0d1117;
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --glow-color: #58a6ff;
+    --accent-github: #2ea44f;
+    --accent-linkedin: #0a66c2;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+}
+
+.tagline {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* The Glowing Effect */
+.glow-link {
+    text-decoration: none;
+    color: var(--text-primary);
+    padding: 12px 24px;
+    border: 1px solid var(--text-secondary);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.glow-link:hover {
+    transform: translateY(-3px);
+    border-color: var(--glow-color);
+    box-shadow: 0 0 15px var(--glow-color), 0 0 5px var(--glow-color);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Custom glow colors for specific brands */
+.github:hover { 
+    --glow-color: var(--accent-github); 
+    border-color: var(--accent-github);
+}
+
+.linkedin:hover { 
+    --glow-color: var(--accent-linkedin); 
+    border-color: var(--accent-linkedin);
+}
