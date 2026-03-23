@@ -1,3 +1,5 @@
 .git
 .gitignore
+.editorconfig
+.devcontainer
 README.md

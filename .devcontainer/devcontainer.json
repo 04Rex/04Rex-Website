@@ -1,0 +1,10 @@
+{
+  "name": "04Rex-Website",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  // Automatically map the website port when the container starts
+  "forwardPorts": [8080],
+  "postCreateCommand": "docker compose build" 
+}
