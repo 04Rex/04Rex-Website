@@ -1,0 +1,156 @@
+:root {
+    --bg-color: #0d1117;
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --glow-color: #58a6ff;
+    --accent-github: #2ea44f;
+    --accent-linkedin: #0a66c2;
+    --accent-instagram: #e1306c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 24px;
+}
+
+.page {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+
+h1 {
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    letter-spacing: -0.5px;
+    margin-bottom: 0.25rem;
+}
+
+.role {
+    color: var(--text-secondary);
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    margin-bottom: 1.75rem;
+}
+
+
+.links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+}
+
+.links li {
+    margin: 0;
+    width: 100%;
+    max-width: 320px;
+}
+
+/* Glowing buttons */
+.glow-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+    padding: 12px 20px;
+    border: 1px solid var(--text-secondary);
+    border-radius: 10px;
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.glow-link .icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: var(--glow-color);
+}
+
+.glow-link:hover,
+.glow-link:focus {
+    transform: translateY(-3px);
+}
+
+.glow-link:focus-visible {
+    outline: 3px solid rgb(88 166 255 / 18%);
+    outline-offset: 4px;
+}
+
+.glow-link.github:hover {
+    border-color: var(--accent-github);
+    box-shadow: 0 0 18px var(--accent-github);
+}
+
+.glow-link.linkedin:hover {
+    border-color: var(--accent-linkedin);
+    box-shadow: 0 0 18px var(--accent-linkedin);
+}
+
+.glow-link.instagram:hover {
+    border-color: var(--accent-instagram);
+    box-shadow: 0 0 18px var(--accent-instagram);
+}
+
+.site-footer {
+    margin-top: 2.25rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    left: 12px;
+    top: 12px;
+    width: auto;
+    height: auto;
+    padding: 8px 12px;
+    background: #fff;
+    color: #000;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .glow-link {
+        transition: none;
+    }
+}
+
+@media screen and (width <= 420px) {
+    .page {
+        padding: 28px 16px;
+    }
+
+    .glow-link {
+        padding: 10px 14px;
+        font-size: 0.95rem;
+    }
+}

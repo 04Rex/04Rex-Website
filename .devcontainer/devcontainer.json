@@ -1,0 +1,6 @@
+{
+  "name": "04Rex-Website",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "forwardPorts": [],
+  "postCreateCommand": "echo 'Devcontainer ready'"
+}
