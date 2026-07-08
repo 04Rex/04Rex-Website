@@ -138,8 +138,10 @@ h1 {
     z-index: 1000;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .glow-link { transition: none; }
+@media screen and (prefers-reduced-motion: reduce) {
+    .glow-link {
+        transition: none;
+    }
 }
 
 @media screen and (max-width: 420px) {
