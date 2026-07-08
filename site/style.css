@@ -142,7 +142,13 @@ h1 {
     .glow-link { transition: none; }
 }
 
-@media (max-width: 420px) {
-    .page { padding: 28px 16px; }
-    .glow-link { padding: 10px 14px; font-size: 0.95rem; }
+@media screen and (max-width: 420px) {
+    .page {
+        padding: 28px 16px;
+    }
+
+    .glow-link {
+        padding: 10px 14px;
+        font-size: 0.95rem;
+    }
 }
