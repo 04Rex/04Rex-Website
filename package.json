@@ -1,0 +1,14 @@
+{
+  "name": "imperiosus-site",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "stylelint": "^15.10.0",
+    "stylelint-config-standard": "^33.0.0",
+    "html-validate": "^8.6.0"
+  },
+  "scripts": {
+    "lint:css": "stylelint \"site/**/*.css\" --config tools/lint/stylelint.config.json",
+    "lint:html": "html-validate --config tools/lint/htmlvalidate.json \"site/**/*.html\""
+  }
+}
