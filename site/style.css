@@ -32,14 +32,14 @@ body {
 
 h1 {
     font-size: clamp(2rem, 6vw, 3.2rem);
-    margin: 0 0 0.25rem 0;
     letter-spacing: -0.5px;
+    margin-bottom: 0.25rem;
 }
 
 .role {
     color: var(--text-secondary);
     font-size: clamp(1rem, 2.2vw, 1.15rem);
-    margin: 0 0 1.75rem 0;
+    margin-bottom: 1.75rem;
 }
 
 
@@ -54,7 +54,11 @@ h1 {
     width: 100%;
 }
 
-.links li { margin: 0; width: 100%; max-width: 320px; }
+.links li {
+    margin: 0;
+    width: 100%;
+    max-width: 320px;
+}
 
 /* Glowing buttons */
 .glow-link {
@@ -74,32 +78,65 @@ h1 {
     box-sizing: border-box;
 }
 
-.glow-link .icon { width: 18px; height: 18px; display: inline-block; vertical-align: middle; fill: var(--glow-color); }
+.glow-link .icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: var(--glow-color);
+}
 
 .glow-link:hover,
 .glow-link:focus {
     transform: translateY(-3px);
 }
 
-.glow-link:focus-visible { outline: 3px solid rgba(88,166,255,0.18); outline-offset: 4px; }
+.glow-link:focus-visible {
+    outline: 3px solid rgb(88 166 255 / 18%);
+    outline-offset: 4px;
+}
 
-.glow-link.github:hover { 
+.glow-link.github:hover {
     border-color: var(--accent-github);
     box-shadow: 0 0 18px var(--accent-github);
 }
-.glow-link.linkedin:hover { 
+
+.glow-link.linkedin:hover {
     border-color: var(--accent-linkedin);
     box-shadow: 0 0 18px var(--accent-linkedin);
 }
-.glow-link.instagram:hover { 
+
+.glow-link.instagram:hover {
     border-color: var(--accent-instagram);
     box-shadow: 0 0 18px var(--accent-instagram);
 }
 
-.site-footer { margin-top: 2.25rem; color: var(--text-secondary); font-size: 0.9rem; }
+.site-footer {
+    margin-top: 2.25rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
 
-.skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
-.skip-link:focus { left: 12px; top: 12px; width: auto; height: auto; padding: 8px 12px; background: #fff; color: #000; border-radius: 4px; z-index: 1000; }
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    left: 12px;
+    top: 12px;
+    width: auto;
+    height: auto;
+    padding: 8px 12px;
+    background: #fff;
+    color: #000;
+    border-radius: 4px;
+    z-index: 1000;
+}
 
 @media (prefers-reduced-motion: reduce) {
     .glow-link { transition: none; }
