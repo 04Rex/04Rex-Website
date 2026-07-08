@@ -5,7 +5,10 @@
     --glow-color: #58a6ff;
     --accent-github: #2ea44f;
     --accent-linkedin: #0a66c2;
+    --accent-instagram: #e1306c;
 }
+
+* { box-sizing: border-box; }
 
 body {
     background-color: var(--bg-color);
@@ -15,53 +18,94 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
+    padding: 24px;
+}
+
+.page {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px;
 }
 
 h1 {
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
-    letter-spacing: -1px;
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    margin: 0 0 0.25rem 0;
+    letter-spacing: -0.5px;
 }
 
-.tagline {
+.role {
     color: var(--text-secondary);
-    font-size: 1.2rem;
-    margin-bottom: 2.5rem;
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    margin: 0 0 1.75rem 0;
 }
 
-.links {
+
+.links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
     display: flex;
-    gap: 20px;
-    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
 }
 
-/* The Glowing Effect */
+.links li { margin: 0; width: 100%; max-width: 320px; }
+
+/* Glowing buttons */
 .glow-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     text-decoration: none;
     color: var(--text-primary);
-    padding: 12px 24px;
+    padding: 12px 20px;
     border: 1px solid var(--text-secondary);
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    border-radius: 10px;
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
     font-weight: 600;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.glow-link:hover {
+.glow-link .icon { width: 18px; height: 18px; display: inline-block; vertical-align: middle; fill: var(--glow-color); }
+
+.glow-link:hover,
+.glow-link:focus {
     transform: translateY(-3px);
-    border-color: var(--glow-color);
-    box-shadow: 0 0 15px var(--glow-color), 0 0 5px var(--glow-color);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
-/* Custom glow colors for specific brands */
-.github:hover { 
-    --glow-color: var(--accent-github); 
+.glow-link:focus-visible { outline: 3px solid rgba(88,166,255,0.18); outline-offset: 4px; }
+
+.glow-link.github:hover { 
     border-color: var(--accent-github);
+    box-shadow: 0 0 18px var(--accent-github);
+}
+.glow-link.linkedin:hover { 
+    border-color: var(--accent-linkedin);
+    box-shadow: 0 0 18px var(--accent-linkedin);
+}
+.glow-link.instagram:hover { 
+    border-color: var(--accent-instagram);
+    box-shadow: 0 0 18px var(--accent-instagram);
 }
 
-.linkedin:hover { 
-    --glow-color: var(--accent-linkedin); 
-    border-color: var(--accent-linkedin);
+.site-footer { margin-top: 2.25rem; color: var(--text-secondary); font-size: 0.9rem; }
+
+.skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.skip-link:focus { left: 12px; top: 12px; width: auto; height: auto; padding: 8px 12px; background: #fff; color: #000; border-radius: 4px; z-index: 1000; }
+
+@media (prefers-reduced-motion: reduce) {
+    .glow-link { transition: none; }
+}
+
+@media (max-width: 420px) {
+    .page { padding: 28px 16px; }
+    .glow-link { padding: 10px 14px; font-size: 0.95rem; }
 }
